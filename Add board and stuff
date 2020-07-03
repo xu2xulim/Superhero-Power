@@ -1,0 +1,11 @@
+client.add_board(board_name = 'My Superheros', default_lists=False)
+
+for board in client.list_boards():
+    if board.name == "My Superheros":
+        board_list = board.add_list(name='Superman', pos='bottom')
+        trello_card = board_list.add_card(name = 'He is Clark Kent the reporter from Daily Planet' , desc='Created by Trello Superhero')
+        trello_card.create_label(name='SuperPowerUp', color = 'red')
+        friends = ['Spiderman', 'Wonder Woman', "Batman"]
+        trello_card.add_checklist(title = 'My Superhero friends', items = friends)
+        trello_card.attach(name = 'My Self in Super Attire', url = "https://unsplash.com/photos/8I-ht65iRww")
+        trello_card.attach(name = 'My favourite Trailer', url = "https://www.youtube.com/watch?v=3Pksim-YVWE")
