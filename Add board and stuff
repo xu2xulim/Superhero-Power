@@ -1,5 +1,5 @@
 client.add_board(board_name = 'My Superheros', default_lists=False)
-
+# the board object is already available from the above but wanted to show how you can iterate through all the boards to find one in case you were not the one creating it.
 for board in client.list_boards():
     if board.name == "My Superheros":
         board_list = board.add_list(name='Superman', pos='bottom')
