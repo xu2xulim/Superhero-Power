@@ -1,0 +1,11 @@
+
+for board in client.list_boards():
+    if board.name == 'Superhero Power Vault':
+        for cfd in board.get_custom_field_definitions():
+            if cfd.name == 'Message':
+                cfd_message = cfd
+        for card in board.get_cards():
+            # change this to the name of your module when you registered the Superhero Power on the vault.
+            if card.name == 'My Power':
+                
+                card.set_custom_field(value = 'I love this' , custom_field = cfd_message)
